@@ -1,1 +1,2 @@
-# Shared_notebooks
+# Shared Scripts
+Git repository for shared scripts.
