@@ -1,5 +1,42 @@
-#!/usr/bin/bash
-sudo apt-get update
-sudo apt-get upgrade -y
-conda update --all -y
-conda clean --all -y
+#!/usr/bin/env python
+
+from subprocess import PIPE, Popen
+
+
+def out_print(terminal_out):
+    out, err = terminal_out.communicate()
+    out = out.decode("utf-8")
+    err = err.decode("utf-8")
+    if out:
+        print(out)
+    if err:
+        print(err)
+
+
+package_managers = ["apt", "brew", "conda"]
+
+for package_manager in package_managers:
+    p = Popen(f"{package_manager} --version", shell=True, stdout=PIPE, stderr=PIPE)
+    std_out, std_err = p.communicate()
+    std_out = std_out.decode("utf-8")
+    std_err = std_err.decode("utf-8")
+    if not std_out:
+        print(f"{package_manager} not found on system.")
+        continue
+    if package_manager == "apt":
+        p = Popen("sudo apt-get update", shell=True, stdout=PIPE, stderr=PIPE)
+        out_print(p)
+        p = Popen("sudo apt-get upgrade -y", shell=True, stdout=PIPE, stderr=PIPE)
+        out_print(p)
+    elif package_manager == "brew":
+        p = Popen("brew update", shell=True, stdout=PIPE, stderr=PIPE)
+        out_print(p)
+        p = Popen("brew upgrade -y", shell=True, stdout=PIPE, stderr=PIPE)
+        out_print(p)
+    elif package_manager == "conda":
+        p = Popen("conda update --all -y", shell=True, stdout=PIPE, stderr=PIPE)
+        out_print(p)
+        p = Popen("conda clean --all -y", shell=True, stdout=PIPE, stderr=PIPE)
+        out_print(p)
+    else:
+        print(f"Unknown package manager: {package_manager}")
