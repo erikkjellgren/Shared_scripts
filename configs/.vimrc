@@ -5,3 +5,5 @@ set shiftwidth=4
 set smarttab
 set ruler
 set belloff=all
+:colorscheme desert
+:set hlsearch
