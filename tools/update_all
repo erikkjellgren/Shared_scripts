@@ -37,7 +37,7 @@ for package_manager in package_managers:
         while stream_process(process):
             time.sleep(0.1)
         process = subprocess.Popen(
-            "sudo apt-get upgrade -y",
+            "sudo apt-get --with-new-pkgs upgrade -y",
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
