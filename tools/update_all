@@ -45,7 +45,7 @@ for package_manager in package_managers:
         while stream_process(process):
             time.sleep(0.1)
         process = subprocess.Popen(
-            "sudo apt autoremove",
+            "sudo apt-get autoremove",
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
