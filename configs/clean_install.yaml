@@ -1,0 +1,27 @@
+name: base
+dependencies:
+  - h5py
+  - matplotlib
+    #- notebook
+  - numba
+  - numpy
+  - pip
+  - pytest
+  - python=3.12
+  - scipy
+  - sympy
+  - pip:
+    # Basic
+      - notebook
+    # Qiskit
+      - pylatexenc
+      - qiskit
+      - qiskit-aer
+      - qiskit-ibm-runtime
+      - qiskit-nature
+    # Dev
+      - pre-commit
+      - sphinx
+      - sphinx_rtd_theme
+    # Other
+      - pyscf
