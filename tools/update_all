@@ -11,7 +11,20 @@ def stream_process(process):
     return go
 
 
-package_managers = ["apt", "brew", "conda"]
+package_managers = ("apt", "brew", "conda", "pip")
+pip_packages = (
+    "black",
+    "isort",
+    "pre-commit",
+    "pylatexenc",
+    "pyscf",
+    "qiskit",
+    "qiskit-aer",
+    "qiskit-ibm-runtime",
+    "qiskit-nature",
+    "sphinx",
+    "sphinx_rtd_theme",
+)
 
 for package_manager in package_managers:
     print(f"\n### Updating packages in {package_manager} ###")
@@ -74,6 +87,15 @@ for package_manager in package_managers:
             time.sleep(0.1)
         process = subprocess.Popen(
             "conda clean --all -y",
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        while stream_process(process):
+            time.sleep(0.1)
+    elif package_manager == "pip":
+        process = subprocess.Popen(
+            f"pip install {' '.join(pip_packages)} --upgrade",
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
