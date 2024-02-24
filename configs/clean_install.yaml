@@ -20,6 +20,8 @@ dependencies:
       - qiskit-ibm-runtime
       - qiskit-nature
     # Dev
+      - black
+      - isort
       - pre-commit
       - sphinx
       - sphinx_rtd_theme
