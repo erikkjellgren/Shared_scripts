@@ -2,7 +2,6 @@ name: base
 dependencies:
   - h5py
   - matplotlib
-    #- notebook
   - numba
   - numpy
   - pip
@@ -13,6 +12,7 @@ dependencies:
   - pip:
     # Basic
       - notebook
+      - scalene
     # Qiskit
       - pylatexenc
       - qiskit
@@ -20,6 +20,8 @@ dependencies:
       - qiskit-ibm-runtime
       - qiskit-nature
     # Dev
+      - black
+      - isort
       - pre-commit
       - sphinx
       - sphinx_rtd_theme

@@ -22,6 +22,7 @@ pip_packages = (
     "qiskit-aer",
     "qiskit-ibm-runtime",
     "qiskit-nature",
+    "scalene",
     "sphinx",
     "sphinx_rtd_theme",
 )
