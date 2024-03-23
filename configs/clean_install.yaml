@@ -21,6 +21,7 @@ dependencies:
       - qiskit-nature
     # Dev
       - black
+      - fortls
       - isort
       - pre-commit
       - sphinx
