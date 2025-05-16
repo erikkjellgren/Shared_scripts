@@ -13,15 +13,16 @@ def stream_process(process):
 
 package_managers = ("apt", "brew", "conda", "pip")
 pip_packages = (
-    "black",
-    "isort",
+    "fotls",
     "pre-commit",
     "pylatexenc",
     "pyscf",
     "qiskit",
     "qiskit-aer",
+    "qiskit-ibm-provider",
     "qiskit-ibm-runtime",
     "qiskit-nature",
+    "ruff",
     "scalene",
     "sphinx",
     "sphinx_rtd_theme",

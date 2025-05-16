@@ -6,23 +6,23 @@ dependencies:
   - numpy
   - pip
   - pytest
-  - python=3.12
   - scipy
   - sympy
   - pip:
     # Basic
+      - fortls
       - notebook
       - scalene
     # Qiskit
       - pylatexenc
-      - qiskit
+      - qiskit==1.4
       - qiskit-aer
+      - qiskit-ibm-provider
       - qiskit-ibm-runtime
       - qiskit-nature
     # Dev
-      - black
-      - isort
       - pre-commit
+      - ruff
       - sphinx
       - sphinx_rtd_theme
     # Other
