@@ -13,7 +13,13 @@ def stream_process(process):
 
 package_managers = ("apt", "brew", "conda", "pip")
 pip_packages = (
+<<<<<<< HEAD
     "fotls",
+=======
+    "black",
+    "fortls",
+    "isort",
+>>>>>>> 00d6f7ab45302b6029ce6852805f92f6965fe1e8
     "pre-commit",
     "pylatexenc",
     "pyscf",
