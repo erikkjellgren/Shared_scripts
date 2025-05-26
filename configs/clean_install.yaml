@@ -13,7 +13,7 @@ dependencies:
       - notebook
     # Qiskit
       - pylatexenc
-      - qiskit==1.4
+      - qiskit==1.2
       - qiskit-aer
       - qiskit-ibm-provider
       - qiskit-ibm-runtime
@@ -21,7 +21,6 @@ dependencies:
     # Dev
       - fortls
       - pre-commit
-      - ruff
       - scalene
       - sphinx
       - sphinx_rtd_theme
