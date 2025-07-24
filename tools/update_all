@@ -79,6 +79,22 @@ for package_manager in package_managers:
             time.sleep(0.1)
     elif package_manager == "conda":
         process = subprocess.Popen(
+            "conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main",
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        while stream_process(process):
+            time.sleep(0.1)
+        process = subprocess.Popen(
+            "conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r",
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        while stream_process(process):
+            time.sleep(0.1)
+        process = subprocess.Popen(
             "conda update --all -y",
             shell=True,
             stdout=subprocess.PIPE,
